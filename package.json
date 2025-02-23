@@ -1,0 +1,8 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AlexsandroCarrelo/API-REST.git",
+  "author": "Alexsandro <alexsandrodemsoficial@gmail.com>",
+  "license": "MIT"
+}
