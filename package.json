@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/AlexsandroCarrelo/API-REST.git",
   "author": "Alexsandro <alexsandrodemsoficial@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
