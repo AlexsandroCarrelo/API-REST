@@ -14,11 +14,11 @@ server.get("/customers",(req, res)=>{
     return res.json(customers);
 })
 //retornando um id especifico
-server.get("/curtomers/:id", (req,res)=>{
+server.get("/customers/:id", (req,res)=>{
     const id= parseInt(req.params.id);
-    const customer= Customers.find(item => item.id === id);
+    const customer= customers.find(item => item.id === id);
     const status= customer ? 200: 404
-    return res.status(status).json(Customer);
+    return res.status(status).json(customer);
 });
 
 //adicionando um novo id (post)
@@ -26,11 +26,11 @@ server.post("/customers", (req, res)=>{
     const {name, site} = req.body;
     const id = Customers[custimers.length -1].id+1;
 
-    const newcustomer = {id, name, site};
+    const newcustomer = {id, name, site};3
     custimers.push(newcustomer);
 
     return res.status(201).json(newcustomer);
-})
+});
 
 //atualizando um customers (put)
 server.put("/customers/:id", (req, res)=>{
@@ -44,6 +44,16 @@ server.put("/customers/:id", (req, res)=>{
     }  
 
     return res.status(status).json(customers[index]);
+});
+
+server.delete("/customers/:id", (req, res)=>{
+    const id = parseInt(req.params.id);
+    const index = customers.findIndex(item => item.id===id);
+    const status = index >= 0 ? 200 : 404;
+    if(index >0){
+        customers.splice(index,1);
+    }
+    return res.status(status).json()
 });
 
 server.listen(3000);
